@@ -5,10 +5,10 @@ compareString('aaaaa', 1);
 const checkPalindrom = (string) => {
   string = string.replaceAll(' ','').toLowerCase();
   return string === string.split('').reverse().join('');
-}
+};
 
-checkPalindrom("топот");
-checkPalindrom("ДовОд");
+checkPalindrom('топот');
+checkPalindrom('ДовОд');
 
 const findNumber = (result) => {
   result.replace(/\D+/g, '');
