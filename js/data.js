@@ -73,6 +73,7 @@ const addPhotos = () => {
   }
 };
 
-export{addPhotos};
+const images = addPhotos();
+export {images};
 
 
