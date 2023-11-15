@@ -1,2 +1,5 @@
 import {addPhotos} from './data.js';
-addPhotos();
+import {renderPhoto} from './pictures.js';
+
+renderPhoto(addPhotos());
+

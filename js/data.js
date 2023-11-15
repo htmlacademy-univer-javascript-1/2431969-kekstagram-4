@@ -1,8 +1,7 @@
 import {randomInteger} from './util.js';
 
 const COUNT_PHOTOS = 25;
-const photos = [];
-const comments = [];
+
 
 const LIKES = {
   MIN: 15,
@@ -53,14 +52,15 @@ const addComment = (i) => ({
 });
 
 const addComments = () => {
-  for (let i = 0; i < randomInteger(COUNT_COMMENTS.MIN, COUNT_COMMENTS.MAX) ; i++){
-    comments.push(addComment(i));
-  }
+  const COMMENTS = Array.from({
+    length: randomInteger(COUNT_COMMENTS.MIN, COUNT_COMMENTS.MAX)
+  });
+  return COMMENTS.map((__, index) => addComment(index));
 };
 
 const addPhoto = (index) => ({
   id: index,
-  url: `photos/${index +1}.jpg`,
+  url: `photos/${index + 1}.jpg`,
   description: DESCRIPTIONS[randomInteger(0, DESCRIPTIONS.length - 1)],
   likes: randomInteger(LIKES.MIN, LIKES.MAX),
   comments: addComments()
@@ -68,11 +68,12 @@ const addPhoto = (index) => ({
 });
 
 const addPhotos = () => {
-  for (let i = 0; i < COUNT_PHOTOS; i++){
-    photos.push(addPhoto(i));
-  }
+  const PHOTOS = Array.from({
+    length: COUNT_PHOTOS
+  });
+  return PHOTOS.map((__, index) => addPhoto(index));
 };
-
-export{addPhotos};
+addPhotos();
+export {addPhotos};
 
 
