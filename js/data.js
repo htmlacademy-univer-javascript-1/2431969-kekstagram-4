@@ -51,12 +51,8 @@ const addComment = (i) => ({
 
 });
 
-const addComments = () => {
-  const COMMENTS = Array.from({
-    length: randomInteger(COUNT_COMMENTS.MIN, COUNT_COMMENTS.MAX)
-  });
-  return COMMENTS.map((__, index) => addComment(index));
-};
+
+const addComments = () => Array.from({length: randomInteger(COUNT_COMMENTS.MIN, COUNT_COMMENTS.MAX)}, (_, index) => addComment(index + 1));
 
 const addPhoto = (index) => ({
   id: index,
@@ -73,7 +69,6 @@ const addPhotos = () => {
   });
   return PHOTOS.map((__, index) => addPhoto(index));
 };
-addPhotos();
-export {addPhotos};
+const data = addPhotos();
 
-
+export {data};
