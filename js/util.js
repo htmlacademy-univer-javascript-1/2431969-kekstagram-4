@@ -1,4 +1,10 @@
-const randomInteger = (min, max) => Math.floor(Math.random()*(max - min + 1) - min);
+const randomInteger = (min, max) => {
+  const lower = Math.ceil(Math.min(min, max));
+  const upper = Math.floor(Math.max(min, max));
+
+  const result = Math.random() * (upper - lower + 1) + lower;
+  return Math.floor(result);
+};
 
 const Keys = {
   ESCAPE: 'Escape',
@@ -14,4 +20,7 @@ const closeOnEscKeyDown = (evt, cb) => {
 };
 
 export{randomInteger};
+
 export{closeOnEscKeyDown};
+
+
