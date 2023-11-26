@@ -23,4 +23,5 @@ export{randomInteger};
 
 export{closeOnEscKeyDown};
 
+export{isEscapeKey};
 
