@@ -6,6 +6,8 @@ const randomInteger = (min, max) => {
   return Math.floor(result);
 };
 
+const checkLenght = (inputString, maxLenght) => inputString.length <= maxLenght;
+
 const Keys = {
   ESCAPE: 'Escape',
   ESC: 'Esc'
@@ -19,9 +21,24 @@ const closeOnEscKeyDown = (evt, cb) => {
   }
 };
 
-export{randomInteger};
+const showAlert = (message, alertShowTime) => {
+  const alertContainer = document.createElement('div');
+  alertContainer.style.zIndex = '100';
+  alertContainer.style.position = 'absolute';
+  alertContainer.style.left = '0';
+  alertContainer.style.top = '0';
+  alertContainer.style.right = '0';
+  alertContainer.style.padding = '10px 3px';
+  alertContainer.style.fontSize = '30px';
+  alertContainer.style.textAlign = 'center';
+  alertContainer.style.backgroundColor = '#f5cc00';
 
-export{closeOnEscKeyDown};
+  alertContainer.textContent = message;
 
-export{isEscapeKey};
+  document.body.append(alertContainer);
+
+  setTimeout(() => alertContainer.remove(), alertShowTime);
+};
+
+export{randomInteger, closeOnEscKeyDown, isEscapeKey, showAlert, checkLenght};
 
