@@ -4,6 +4,10 @@ const pictures = document.querySelector('.pictures');
 const pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
 
 
+const removePictures = () => {
+  document.querySelectorAll('.picture').forEach((photo) => photo.remove());
+};
+
 const renderPicture = (photo) => {
 
   const {url, description, comments, likes} = photo;
@@ -43,4 +47,4 @@ const renderPictures = (photos) => {
   pictures.appendChild(fragment);
 
 };
-export {renderPictures};
+export {renderPictures, removePictures};

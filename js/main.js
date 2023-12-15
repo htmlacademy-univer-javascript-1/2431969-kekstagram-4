@@ -6,6 +6,7 @@ import {renderPictures} from './pictures.js';
 import './form.js';
 import './hashtags-pristine.js';
 import './message.js';
+import './filter.js';
 import {initEffects} from './effects.js';
 
 initEffects();
