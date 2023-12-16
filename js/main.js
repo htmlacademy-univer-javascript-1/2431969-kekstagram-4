@@ -3,11 +3,12 @@ const SHOW_TIME = 5000;
 import {loadData} from './fetch.js';
 import {showAlert} from './util.js';
 import {renderPictures} from './pictures.js';
+import {initEffects} from './effects.js';
 import './form.js';
 import './hashtags-pristine.js';
 import './message.js';
 import './filter.js';
-import {initEffects} from './effects.js';
+import './own-photo.js';
 
 initEffects();
 
