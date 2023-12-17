@@ -2,12 +2,6 @@ import { isEscapeKey } from './util.js';
 import { onFilterButtonChange, effectList, sliderWrapper } from './effects.js';
 import { buttonAdjustment} from './hashtags-pristine.js';
 
-const Zoom = {
-  MIN: 25,
-  MAX: 100,
-  STEP: 25,
-};
-
 const body = document.querySelector('body');
 const formUpload = body.querySelector('.img-upload__form');
 const overlay = body.querySelector('.img-upload__overlay');
@@ -18,6 +12,12 @@ const plusButton = body.querySelector('.scale__control--bigger');
 const scaleControlValue = body.querySelector('.scale__control--value');
 const imagePreview = body.querySelector('.img-upload__preview img');
 const commentsField = formUpload.querySelector('.text__description');
+
+const Zoom = {
+  MIN: 25,
+  MAX: 100,
+  STEP: 25,
+};
 
 const closeForm = () => {
   overlay.classList.add('hidden');
@@ -54,7 +54,6 @@ const addFieldListener = (field) => {
   field.addEventListener('focus', onFocus);
   field.addEventListener('blur', onBlur);
 };
-
 
 const changeImages = () => {
   const file = fileUpload.files[0];
