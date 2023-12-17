@@ -7,7 +7,6 @@ const ACTIVE_CLASS = 'img-filters__button--active';
 
 const imgFiltersForm = document.querySelector('.img-filters__form');
 
-
 const availableFilters = {
   'filter-default': () => photos.slice(),
   'filter-random': () => shuffleArray(photos.slice()).slice(0, COUNT_OF_FILTERS),
@@ -25,6 +24,7 @@ const onImgFiltersFormClick = debounce((evt) => {
 });
 
 const onButtonClick =(evt) => {
+
   if (isButton(evt)){
     const selectedButton = imgFiltersForm.querySelector(`.${ACTIVE_CLASS}`);
 
@@ -34,7 +34,9 @@ const onButtonClick =(evt) => {
     }
     evt.target.classList.add(ACTIVE_CLASS);
   }
+
 };
+
 imgFiltersForm.addEventListener('click', onImgFiltersFormClick);
 
 imgFiltersForm.addEventListener('click', onButtonClick);

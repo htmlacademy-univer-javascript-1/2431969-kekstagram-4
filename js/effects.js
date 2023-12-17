@@ -8,6 +8,7 @@ const MIN_VALUE_EFFECT = 0;
 const MAX_GRAYSCALE_EFFECT = 1;
 const MAX_SEPIA_EFFECT = 1;
 const EFFECTS_STEP = 0.1;
+const STEP_FOR_NONE =1;
 
 const SLIDER = {
   MIN: 0,
@@ -21,6 +22,19 @@ const effectValue = document.querySelector('.effect-level__value');
 const effectList = document.querySelector('.effects__list');
 
 const Effects = {
+  none: {
+    filter: 'none',
+    unit: '',
+    options: {
+      range: {
+        min: MIN_VALUE_EFFECT,
+        max: MAX_VALUE_EFFECT
+      },
+      start: MAX_VALUE_EFFECT,
+      step: STEP_FOR_NONE
+    }
+  },
+
   chrome: {
     filter: 'grayscale',
     units: '',
@@ -34,6 +48,7 @@ const Effects = {
       step: EFFECTS_STEP,
     }
   },
+
   sepia: {
     filter: 'sepia',
     units: '',
@@ -47,6 +62,7 @@ const Effects = {
       step: EFFECTS_STEP,
     }
   },
+
   marvin: {
     filter: 'invert',
     units: '%',
@@ -60,6 +76,7 @@ const Effects = {
       step: EFFECTS_STEP,
     }
   },
+
   phobos: {
     filter: 'blur',
     units: 'px',
@@ -73,6 +90,7 @@ const Effects = {
       step: EFFECTS_STEP,
     }
   },
+
   heat: {
     filter: 'brightness',
     units: '',
@@ -109,7 +127,6 @@ const initEffects = () => {
   noUiSlider.create(slider, sliderConfig);
 };
 
-
 const onFilterButtonChange = (evt) => {
   const evtHandler = evt.target.value;
 
@@ -130,6 +147,5 @@ const onFilterButtonChange = (evt) => {
     });
   }
 };
-
 
 export {onFilterButtonChange, initEffects, effectList, sliderWrapper};

@@ -19,6 +19,7 @@ const sendRequest = (onSuccess, onError, method, body) => {
       onError(err);
     });
 };
+
 const loadData = (onSuccess, onError, method = 'GET') => sendRequest(onSuccess, onError, method);
 
 const uploadData = (onSuccess, onError, method = 'POST', body) => sendRequest(onSuccess, onError, method, body);
