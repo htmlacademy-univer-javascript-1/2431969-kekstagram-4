@@ -8,6 +8,7 @@ const formUpload = document.querySelector('.img-upload__form');
 const submitButton = document.querySelector('.img-upload__submit');
 const commentsField = formUpload.querySelector('.text__description');
 
+
 const pristine = new Pristine(formUpload, {
   classTo: 'img-upload__field-wrapper',
   errorTextParent: 'img-upload__field-wrapper',

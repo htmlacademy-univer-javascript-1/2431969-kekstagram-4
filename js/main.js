@@ -6,8 +6,8 @@ import {renderPictures} from './pictures.js';
 import {initEffects} from './effects.js';
 import './form.js';
 import './hashtags-pristine.js';
-import './message.js';
-import './filter.js';
+import './messages.js';
+import './filters.js';
 import './own-photo.js';
 
 initEffects();
