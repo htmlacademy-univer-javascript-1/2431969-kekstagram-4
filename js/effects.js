@@ -34,6 +34,7 @@ const Effects = {
       step: STEP_FOR_NONE
     }
   },
+
   chrome: {
     filter: 'grayscale',
     units: '',
@@ -47,6 +48,7 @@ const Effects = {
       step: EFFECTS_STEP,
     }
   },
+
   sepia: {
     filter: 'sepia',
     units: '',
@@ -60,6 +62,7 @@ const Effects = {
       step: EFFECTS_STEP,
     }
   },
+
   marvin: {
     filter: 'invert',
     units: '%',
@@ -73,6 +76,7 @@ const Effects = {
       step: EFFECTS_STEP,
     }
   },
+
   phobos: {
     filter: 'blur',
     units: 'px',
@@ -86,6 +90,7 @@ const Effects = {
       step: EFFECTS_STEP,
     }
   },
+
   heat: {
     filter: 'brightness',
     units: '',
@@ -122,7 +127,6 @@ const initEffects = () => {
   noUiSlider.create(slider, sliderConfig);
 };
 
-
 const onFilterButtonChange = (evt) => {
   const evtHandler = evt.target.value;
 
@@ -143,6 +147,5 @@ const onFilterButtonChange = (evt) => {
     });
   }
 };
-
 
 export {onFilterButtonChange, initEffects, effectList, sliderWrapper};

@@ -1,4 +1,5 @@
 import {showBigPicture} from './big-picture.js';
+
 const pictures = document.querySelector('.pictures');
 
 const pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
@@ -47,4 +48,5 @@ const renderPictures = (photos) => {
   pictures.appendChild(fragment);
 
 };
+
 export {renderPictures, removePictures};

@@ -20,7 +20,6 @@ const buttonAdjustment = () => {
   submitButton.disabled = !pristine.validate();
 };
 
-
 const inputHashtag = document.querySelector('.text__hashtags');
 
 let errorMessage = '';
@@ -97,7 +96,6 @@ const commentHandler = (string) => {
     errorMessage = rule.error;
   }
   return !isInvalid;
-
 };
 
 pristine.addValidator(inputHashtag, hashtagsHandler, error, 2, false);
